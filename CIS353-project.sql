@@ -13,6 +13,9 @@ CIS 353
 < The SQL/DDL code that creates your schema > 
 In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. 
 */
+CREATE TABLE Teams
+(
+
 -- 
 SET FEEDBACK OFF 
 /*< The INSERT statements that populate the tables> 
