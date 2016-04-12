@@ -24,8 +24,8 @@ CREATE TABLE Teams
     region      CHAR(15)    NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT teamIC1 CHECK (wins <= 0),
-    CONTRAINT teamIC2 CHECK (losses <= 0), 
+    CONTRAINT teamIC1 CHECK (wins >= 0),
+    CONTRAINT teamIC2 CHECK (losses >= 0), 
     CONTRAINT teamIC3 UNIQUE (seed, region), 
     CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
     CONTRAINT teamIC5 CHECK (region IN ('West,' 'South,' 'Midwest,' 'East'))
@@ -61,7 +61,8 @@ CREATE TABLE Game
     nextGID     INTEGER,    NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East))
+    CONTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East)),
+    CONTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
     
 
 );
