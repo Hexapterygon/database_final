@@ -66,7 +66,8 @@ CREATE TABLE Game
     CONTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
     CONTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
     -- not sure about how to do gameIC5
-    -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction forn this?
+    -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction and then do a foreign
+    -- key contraint for this?
     
     
     
