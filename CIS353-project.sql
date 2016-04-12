@@ -63,6 +63,12 @@ CREATE TABLE Game
     --needs integrity constraints yet
     CONTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East)),
     CONTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
+    CONTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
+    CONTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
+    -- not sure about how to do gameIC5
+    -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction forn this?
+    
+    
     
 
 );
