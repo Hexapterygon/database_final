@@ -24,6 +24,14 @@ CREATE TABLE Teams
     region      CHAR(15)    NOT NULL,
 
     --needs integrity constraints yet
+    CONTRAINT teamIC1 CHECK (wins <= 0),
+    CONTRAINT teamIC2 CHECK (losses <= 0), 
+    CONTRAINT teamIC3 UNIQUE (seed, region), 
+    CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
+    CONTRAINT teamIC5 CHECK (region IN ('West,' 'South,' 'Midwest,' 'East')), 
+    
+    
+    
 );
 -- ------------------------------------------------------
 CREATE TABLE Player
@@ -37,6 +45,10 @@ CREATE TABLE Player
     teamID      INTEGER,     --not sure on nullness
 
     --needs integrity constraints yet
+        CONSTRAINT playerIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID)
+                         ON DELETE CASCADE,
+        CONSTRAINT playerIC2 CHECK (year IN ('Freshman', 'Sophomore', 'Junior,' 'Senior'))
+        
 );
 --  -------------------------------------------------------
 CREATE TABLE Game
