@@ -24,11 +24,11 @@ CREATE TABLE Teams
     region      CHAR(15)    NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT teamIC1 CHECK (wins >= 0),
-    CONTRAINT teamIC2 CHECK (losses >= 0), 
-    CONTRAINT teamIC3 UNIQUE (seed, region), 
+    CONSTRAINT teamIC1 CHECK (wins >= 0),
+    CONSTRAINT teamIC2 CHECK (losses >= 0), 
+    CONSTRAINT teamIC3 UNIQUE (seed, region), 
     CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
-    CONTRAINT teamIC5 CHECK (region IN ('West,' 'South,' 'Midwest,' 'East'))
+    CONSTRAINT teamIC5 CHECK (region IN ('West,' 'South,' 'Midwest,' 'East'))
 );
 -- ------------------------------------------------------
 CREATE TABLE Player
@@ -61,10 +61,10 @@ CREATE TABLE Game
     nextGID     INTEGER,    NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East')),
-    CONTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
-    CONTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
-    CONTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID)
+    CONSTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East')),
+    CONSTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
+    CONSTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
+    CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID)
     -- not sure about how to do gameIC5
     -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction and then do a foreign
     -- key contraint for this?
@@ -85,7 +85,7 @@ CREATE TABLE Coach
     startYear   DECIMAL(4,0) NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT coachIC1 CHECK(wins >= 0),
+    CONSTRAINT coachIC1 CHECK(wins >= 0),
     CONSTRAINT coachIC2 CHECK(losses >= 0),
     CONSTRAINT coachIC3 FOREIGN KEY (team) REFERENCES Teams(teamID)
 );
@@ -99,10 +99,10 @@ CREATE TABLE Performance
     assists     INTEGER,    NOT NULL,
 
     --needs integrity constraints yet
-    CONTRAINT perIC1 CHECK(points >= 0),
-    CONTRAINT perIC2 CHECK(rebounds >= 0),
-    CONTRAINT perIC3 CHECK(assists >= 0),
-    CONTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Player(playerID),
+    CONSTRAINT perIC1 CHECK(points >= 0),
+    CONSTRAINT perIC2 CHECK(rebounds >= 0),
+    CONSTRAINT perIC3 CHECK(assists >= 0),
+    CONSTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Player(playerID),
     CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
     CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
     
