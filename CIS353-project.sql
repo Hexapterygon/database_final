@@ -116,6 +116,34 @@ SET FEEDBACK OFF
     your queries can be verified by hand. 
     See the Sailors database as an example.
 */
+    playerID    INTEGER,
+    num         INTEGER     NOT NULL,
+    firstName   char(15)    NOT NULL,
+    lastName    char(15)    NOT NULL,
+    height      INTEGER     NOT NULL,
+    year        char(15)    NOT NULL,
+    teamID      INTEGER,     --not sure on nullness
+
+
+INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' , );
+INSERT INTO Players (2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' , );
+INSERT INTO Players (3,2 ,'Kris' ,'Jenkins' ,78 ,'Jr' , );
+INSERT INTO Players (4,3 ,'Josh' ,'Hart' ,77 ,'Jr' , );
+INSERT INTO Players (5,4 ,'Eric' ,'Paschall' ,79 ,'Fr' , );
+INSERT INTO Players (6,5 ,'Phil' ,'Booth' ,75 ,'So' , );
+INSERT INTO Players (7,10 ,'Donte' ,'DiVencenzo' ,77 ,'Fr' , );
+INSERT INTO Players (8,15 ,'Ryan' ,'Arcidiacono' ,75 ,'Sr' , );
+INSERT INTO Players (9,20 ,'Patrick' ,'Farrel' ,77 ,'Sr' , );
+INSERT INTO Players (10,23 ,'Daniel' ,'Ochefu' ,83 ,'Sr' , );
+INSERT INTO Players (11,25 ,'Mikal' ,'Bridges' ,79 ,'Fr' , );
+INSERT INTO Players (12,34 ,'Tim','Delaney' ,81 ,'Fr' , );
+INSERT INTO Players (13,45 ,'Darryl','Reynolds' ,80 ,'Jr' , );
+INSERT INTO Players (14,52 ,'Kevin','Rafferty' ,80 ,'Sr' , );
+
+INSERT INTO Players (15, , , , , , );
+INSERT INTO Players (16, , , , , , );
+INSERT INTO Players (17, , , , , , );
+INSERT INTO Players (18, , , , , , );
 
 SET FEEDBACK ON 
 COMMIT 
