@@ -28,7 +28,7 @@ CREATE TABLE Teams
     CONSTRAINT teamIC2 CHECK (losses >= 0), 
     CONSTRAINT teamIC3 UNIQUE (seed, region), 
     CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
-    CONSTRAINT teamIC5 CHECK (region IN ('West,' 'South,' 'Midwest,' 'East'))
+    CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
 CREATE TABLE Player
@@ -44,7 +44,7 @@ CREATE TABLE Player
     --needs integrity constraints yet
         CONSTRAINT playerIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID)
                          ON DELETE CASCADE,
-        CONSTRAINT playerIC2 CHECK (year IN ('Freshman', 'Sophomore', 'Junior,' 'Senior'))
+        CONSTRAINT playerIC2 CHECK (year IN ('Freshman', 'Sophomore', 'Junior', 'Senior'))
         
 );
 --  -------------------------------------------------------
@@ -61,7 +61,7 @@ CREATE TABLE Game
     nextGID     INTEGER 
 
     --needs integrity constraints yet
-    CONSTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East')),
+    CONSTRAINT gameIC1 CHECK (region IN('South', 'West', 'Midwest', 'East')),
     CONSTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
     CONSTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
     CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
@@ -144,6 +144,12 @@ INSERT INTO Players (15, , , , , , );
 INSERT INTO Players (16, , , , , , );
 INSERT INTO Players (17, , , , , , );
 INSERT INTO Players (18, , , , , , );
+
+
+
+
+
+INSERT INTO Game (1,'Final Four',04/02/2015, 
 
 SET FEEDBACK ON 
 COMMIT 
