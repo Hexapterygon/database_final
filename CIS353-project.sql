@@ -168,6 +168,10 @@ INSERT INTO Game (1,'Final Four','2016-04-02',95,51,'Villanova','Oklahoma','Vill
 INSERT INTO Game (2,'Final Four','2016-04-02',83,66,'UNC','Syracuse','UNC',3);
 INSERT INTO Game (3,'Final Four', '2016-04-02',77,74,'Villanova','UNC','Villanova',);
 
+INSERT INTO Coach (1,'Jay','Wright',441,237,'Villanova',2001);
+INSERT INTO Coach (2,'Jim','Boeheim',988,346,'Syracuse',1976);
+INSERT INTO Coach (3,'Roy','Williams',783,209,'UNC',2003);
+INSERT INTO Coach (4,'Lon','Kruger',590,361,'Oklahoma',2011);
 
 
 SET FEEDBACK ON 
