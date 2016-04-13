@@ -149,7 +149,9 @@ INSERT INTO Players (18, , , , , , );
 
 
 
-INSERT INTO Game (1,'Final Four',04/02/2015, 
+INSERT INTO Game (1,'Final Four','2016-04-02',95,51,'Villanova','Oklahoma','Villanova',2);
+INSERT INTO GAME (2,'Final Four','2016-04-02',83,66,'UNC','Syracuse','UNC',3);
+INSERT INTO GAME (3,'Final Four', '2016-04-02',77,74,'Villanova','UNC','Villanova',);
 
 SET FEEDBACK ON 
 COMMIT 
