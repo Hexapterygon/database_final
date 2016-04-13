@@ -64,7 +64,7 @@ CREATE TABLE Game
     CONTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East')),
     CONTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
     CONTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
-    CONTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
+    CONTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID)
     -- not sure about how to do gameIC5
     -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction and then do a foreign
     -- key contraint for this?
@@ -85,6 +85,9 @@ CREATE TABLE Coach
     startYear   DECIMAL(4,0) NOT NULL,
 
     --needs integrity constraints yet
+    CONTRAINT coachIC1 CHECK(wins >= 0),
+    CONSTRAINT coachIC2 CHECK(losses >= 0),
+    CONSTRAINT coachIC3 FOREIGN KEY (team) REFERENCES Teams(teamID)
 );
 --  -------------------------------------------------------
 CREATE TABLE Performance
@@ -96,6 +99,14 @@ CREATE TABLE Performance
     assists     INTEGER,    NOT NULL,
 
     --needs integrity constraints yet
+    CONTRAINT perIC1 CHECK(points >= 0),
+    CONTRAINT perIC2 CHECK(rebounds >= 0),
+    CONTRAINT perIC3 CHECK(assists >= 0),
+    CONTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Player(playerID),
+    CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
+    CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
+    
+    
 
 );
 --  -------------------------------------------------------
