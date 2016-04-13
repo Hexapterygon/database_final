@@ -51,37 +51,32 @@ CREATE TABLE Player
 CREATE TABLE Game
 (
     gameID      INTEGER,
-    region      CHAR(15)    NOT NULL,
-    gDate       DATE,       NOT NULL,
-    winScore    INTEGER,    NOT NULL,
-    loseScore   INTEGER,    NOT NULL,
-    winner      INTEGER,    NOT NULL,
-    teamOne     INTEGER,    NOT NULL,
-    teamTwo     INTEGER,    NOT NULL,
-    nextGID     INTEGER,    NOT NULL,
+    region      CHAR(15)   NOT NULL,
+    gDate       DATE       NOT NULL,
+    winScore    INTEGER    NOT NULL,
+    loseScore   INTEGER    NOT NULL,
+    winner      INTEGER    NOT NULL,
+    teamOne     INTEGER    NOT NULL,
+    teamTwo     INTEGER    NOT NULL,
+    nextGID     INTEGER 
 
     --needs integrity constraints yet
     CONSTRAINT gameIC1 CHECK (region IN('South,' 'West,' 'Midwest,' 'East')),
     CONSTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
     CONSTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
-    CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID)
-    -- not sure about how to do gameIC5
-    -- gameIC6: could we change nextGID to INTEGER, NULL in the table contruction and then do a foreign
-    -- key contraint for this?
-    
-    
-    
-
+    CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
+    CONSTRAINT gameIC5 CHECK (winner = teamOne OR winner = teamTwo),
+    CONSTRAINT gameIC6 FOREIGN KEY nextGID REFERENCES Game(gameID)
 );
 --  -------------------------------------------------------
 CREATE TABLE Coach
 (
     coachID     INTEGER,
-    firstName   CHAR(15),    NOT NULL,
-    lastName    CHAR(15),    NOT NULL,
-    wins        INTEGER,     NOT NULL,
-    losses      INTEGER,     NOT NULL,
-    team        INTEGER,     NOT NULL,
+    firstName   CHAR(15)     NOT NULL,
+    lastName    CHAR(15)     NOT NULL,
+    wins        INTEGER      NOT NULL,
+    losses      INTEGER      NOT NULL,
+    team        INTEGER      NOT NULL,
     startYear   DECIMAL(4,0) NOT NULL,
 
     --needs integrity constraints yet
@@ -93,10 +88,10 @@ CREATE TABLE Coach
 CREATE TABLE Performance
 (
     playerID    INTEGER,
-    gameID      INTEGER,
-    points      INTEGER,    NOT NULL,
-    rebounds    INTEGER,    NOT NULL,
-    assists     INTEGER,    NOT NULL,
+    gameID      INTEGER
+    points      INTEGER    NOT NULL,
+    rebounds    INTEGER    NOT NULL,
+    assists     INTEGER    NOT NULL,
 
     --needs integrity constraints yet
     CONSTRAINT perIC1 CHECK(points >= 0),
@@ -106,10 +101,8 @@ CREATE TABLE Performance
     CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
     CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
     
-    
-
 );
---  -------------------------------------------------------
+---------------------------------------------------------
 CREATE TABLE PreviouslyCoached
 (
 
