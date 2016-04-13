@@ -61,7 +61,7 @@ CREATE TABLE Game
     nextGID     INTEGER 
 
     --needs integrity constraints yet
-    CONSTRAINT gameIC1 CHECK (region IN('South', 'West', 'Midwest', 'East')),
+    CONSTRAINT gameIC1 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
     CONSTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
     CONSTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
     CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
