@@ -159,6 +159,23 @@ INSERT INTO Players (30,35,'Chinonso','Obokoh',81,'So', );
 INSERT INTO Players (31,54,'Ky','Feldman',70, 'Fr', );
 INSERT INTO Players (32,55,'Christian','White',70,'Sr',);
 
+INSERT INTO Players (33,14,'Bola','Alade',76,'Fr', );
+INSERT INTO Players (34,21,'Dante','Buford',79,'Fr', );
+INSERT INTO Players (35,25,'C.J.','Cole',79,'Jr', );
+INSERT INTO Players (36,11,'Isaiah','Cousins',76,'Sr', );
+INSERT INTO Players (37,5,'Matt','Freeman',82,'Fr', );
+INSERT INTO Players (38,45,'Austin','Grandstaff',77,'Fr', );
+INSERT INTO Players (39,22,'Daniel','Harper',73,'Jr', );
+INSERT INTO Players (40,24,'Buddy','Hield',76,'Sr', );
+INSERT INTO Players (41,3,'Christian','James',76,'Fr', );
+INSERT INTO Players (42,12,'Khadeem','Lattin',81,'So', );
+INSERT INTO Players (43,41,'Austin','Mankin',79,'Sr', );
+INSERT INTO Players (44,30,'Akolda','Manyang',84,'Jr', );
+INSERT INTO Players (45,4,'Jamuni','McNeace',82,'Fr', );
+INSERT INTO Players (46,1,'Rashard','Odomes',78,'Fr', );
+INSERT INTO Players (47,0,'Ryan','Spangler',80,'Sr', );
+INSERT INTO Players (48,2,'Dinjiyl','Walker',73,'Sr', );
+INSERT INTO Players (49,10,'Jordan','Woodard',72,'Jr', );
 
 
 
