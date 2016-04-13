@@ -44,7 +44,7 @@ CREATE TABLE Player
     --needs integrity constraints yet
         CONSTRAINT playerIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID)
                          ON DELETE CASCADE,
-        CONSTRAINT playerIC2 CHECK (year IN ('Freshman', 'Sophomore', 'Junior', 'Senior'))
+        CONSTRAINT playerIC2 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
         
 );
 --  -------------------------------------------------------
