@@ -124,7 +124,7 @@ SET FEEDBACK OFF
     year        char(15)    NOT NULL,
     teamID      INTEGER,     --not sure on nullness
 
-
+--Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' , );
 INSERT INTO Players (2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' , );
 INSERT INTO Players (3,2 ,'Kris' ,'Jenkins' ,78 ,'Jr' , );
@@ -139,7 +139,7 @@ INSERT INTO Players (11,25 ,'Mikal' ,'Bridges' ,79 ,'Fr' , );
 INSERT INTO Players (12,34 ,'Tim','Delaney' ,81 ,'Fr' , );
 INSERT INTO Players (13,45 ,'Darryl','Reynolds' ,80 ,'Jr' , );
 INSERT INTO Players (14,52 ,'Kevin','Rafferty' ,80 ,'Sr' , );
-
+--Syracuse Players
 INSERT INTO Players (15,0,'Michael','Gbinije',79,'Sr', );
 INSERT INTO Players (16,1,'Franklin','Howard',76,'Fr', );
 INSERT INTO Players (17,3,'Shaun','Belby',70,'Fr', );
@@ -158,7 +158,7 @@ INSERT INTO Players (29,34,'Doyin','Akintobi-Adeyeye',78,'So', );
 INSERT INTO Players (30,35,'Chinonso','Obokoh',81,'So', );
 INSERT INTO Players (31,54,'Ky','Feldman',70, 'Fr', );
 INSERT INTO Players (32,55,'Christian','White',70,'Sr',);
-
+--Oklahoma Players
 INSERT INTO Players (33,14,'Bola','Alade',76,'Fr', );
 INSERT INTO Players (34,21,'Dante','Buford',79,'Fr', );
 INSERT INTO Players (35,25,'C.J.','Cole',79,'Jr', );
@@ -176,7 +176,23 @@ INSERT INTO Players (46,1,'Rashard','Odomes',78,'Fr', );
 INSERT INTO Players (47,0,'Ryan','Spangler',80,'Sr', );
 INSERT INTO Players (48,2,'Dinjiyl','Walker',73,'Sr', );
 INSERT INTO Players (49,10,'Jordan','Woodard',72,'Jr', );
-
+--North Carolina Players
+INSERT INTO Players (50,0,'Nate','Britt',73,'Jr', );
+INSERT INTO Players (51,1,'Theo','Pinson',78,'So', );
+INSERT INTO Players (52,2,'Joel','Berry',72,'So', );
+INSERT INTO Players (53,3,'Kennedy','Meeks',82,'Jr', );
+INSERT INTO Players (54,4,'Isaiah','Hicks',81,'Jr', );
+INSERT INTO Players (55,5,'Marcus','Paige',74,'Sr', );
+INSERT INTO Players (56,11,'Brice','Johnson',82,'Sr', );
+INSERT INTO Players (57,13,'Kanler','Coker',76,'Jr', );
+INSERT INTO Players (58,24,'Kenny','Williams',76,'Fr', );
+INSERT INTO Players (59,30,'Stilman','White',73,'Jr', );
+INSERT INTO Players (60,31,'Justin','Coleman',73,'Sr', );
+INSERT INTO Players (61,32,'Luke','Maye',80,'Fr', );
+INSERT INTO Players (62,34,'Toby','Egbuna',76,'Sr', );
+INSERT INTO Players (63,42,'Joel','James',83,'Sr', );
+INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr', );
+INSERT INTO Players (65,44,'Justin','Jackson',80,'So', );
 
 
 
