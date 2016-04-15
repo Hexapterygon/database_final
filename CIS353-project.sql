@@ -116,13 +116,7 @@ SET FEEDBACK OFF
     your queries can be verified by hand. 
     See the Sailors database as an example.
 */
-    playerID    INTEGER,
-    num         INTEGER     NOT NULL,
-    firstName   char(15)    NOT NULL,
-    lastName    char(15)    NOT NULL,
-    height      INTEGER     NOT NULL,
-    year        char(15)    NOT NULL,
-    teamID      INTEGER,     --not sure on nullness
+   
 
 --Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
@@ -216,19 +210,37 @@ COMMIT
 /*
 < One query (per table) of the form: SELECT * FROM table; in order to print out your database > 
 */
-SELECT * FROM Coach;
-SELECT * FROM Players;
-SELECT * FROM Teams;
-SELECT * FROM Performance;
-SELECT * FROM Game;
--- 
+SELECT * 
+FROM Coach;
+
+SELECT * 
+FROM Players;
+
+SELECT * 
+FROM Teams;
+
+SELECT * 
+FROM Performance;
+
+SELECT * 
+FROM Game;
+/*
+SELECT *
+FROM PreviouslyCoached
+*/
+------------------------------------------------------
 /*
 < The SQL queries>. Include the following for each query: 
 1.A comment line stating the query number and the feature(s) it demonstrates (e.g. – Q25 – correlated subquery). 
 2.A comment line stating the query in English. 
 3.The SQL code for the query. 
 */
--- 
+-- I think this might be a four relation join. It's definitely three.
+SELECT P.firstName, P.lastName, R.points
+FROM P.Players, T.Teams, G.Game, R.Performance
+WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
+      AND T.teamID = 1 
+-------------------------------------------------------
 /*
 < The insert/delete/update statements  to test the enforcement of ICs> 
 Include the following items for every IC that you test
