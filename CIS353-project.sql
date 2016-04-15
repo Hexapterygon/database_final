@@ -98,7 +98,7 @@ CREATE TABLE Coach
 CREATE TABLE Performance
 (
     playerID    INTEGER,
-    gameID      INTEGER
+    gameID      INTEGER,
     points      INTEGER    NOT NULL,
     rebounds    INTEGER    NOT NULL,
     assists     INTEGER    NOT NULL,
@@ -114,8 +114,16 @@ CREATE TABLE Performance
 );
 ---------------------------------------------------------
 CREATE TABLE PreviouslyCoached
-(
 
+(
+coachID       INTEGER,
+teamID        INTEGER,
+startYear     INTEGER,
+endYear       INTEGER,
+
+CONSTRAINT pcIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
+CONSTRAINT pcIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
+CONSTRAINT pcIC3 PRIMARY KEY (coachID, teamID)
 
 );
 -- 
