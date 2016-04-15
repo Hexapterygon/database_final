@@ -31,6 +31,16 @@ CREATE TABLE Teams
     CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
+CREATE TABLE Championships
+(
+    teamID      INTEGER,
+    yearWon     INTEGER,
+    
+        CONSTRAINT champIC1 FORIEGN KEY (teamID) REFERENCES Teams(teamID) 
+                        ON DELETE CASCADE,
+        CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
+);
+-- -------------------------------------------------------
 CREATE TABLE Players
 (
     playerID    INTEGER,
@@ -107,7 +117,7 @@ CREATE TABLE PreviouslyCoached
 (
 
 
-
+);
 -- 
 SET FEEDBACK OFF 
 /*< The INSERT statements that populate the tables> 
@@ -187,17 +197,25 @@ INSERT INTO Players (62,34,'Toby','Egbuna',76,'Sr',4);
 INSERT INTO Players (63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
-
+--Teams
 INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
 INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
 INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner',29,8,2,'West');
 INSERT INTO Teams (4,'UNC','Rameses'33,7,1,'East');
-
-
+--Chamionships
+INSERT INTO Chamionships(1,2016);
+INSERT INTO Chamionships(1,1985);
+INSERT INTO Chamionships(2,2003);
+INSERT INTO Chamionships(4,2009);
+INSERT INTO Chamionships(4,2005);
+INSERT INTO Chamionships(4,1993);
+INSERT INTO Chamionships(4,1982);
+INSERT INTO Chamionships(4,1957);
+--Games
 INSERT INTO Game (1,'Final Four','2016-04-02',95,51,'Villanova','Oklahoma','Villanova',2);
 INSERT INTO Game (2,'Final Four','2016-04-02',83,66,'UNC','Syracuse','UNC',3);
 INSERT INTO Game (3,'Final Four', '2016-04-02',77,74,'Villanova','UNC','Villanova',);
-
+--Coaches
 INSERT INTO Coach (1,'Jay','Wright',441,237,'Villanova',2001);
 INSERT INTO Coach (2,'Jim','Boeheim',988,346,'Syracuse',1976);
 INSERT INTO Coach (3,'Roy','Williams',783,209,'UNC',2003);
