@@ -194,7 +194,10 @@ INSERT INTO Players (63,42,'Joel','James',83,'Sr', );
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr', );
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So', );
 
-
+INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
+INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
+INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner',29,8,2,'West');
+INSERT INTO Teams (4,'UNC','Rameses'33,7,1,'East');
 
 
 INSERT INTO Game (1,'Final Four','2016-04-02',95,51,'Villanova','Oklahoma','Villanova',2);
