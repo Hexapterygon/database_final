@@ -239,7 +239,7 @@ FROM PreviouslyCoached
 SELECT P.firstName, P.lastName, R.points
 FROM P.Players, T.Teams, G.Game, R.Performance
 WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
-      AND T.teamID = 1 
+      AND T.teamID = 1;
 -------------------------------------------------------
 /*
 < The insert/delete/update statements  to test the enforcement of ICs> 
