@@ -31,7 +31,7 @@ CREATE TABLE Teams
     CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
-CREATE TABLE Player
+CREATE TABLE Players
 (
     playerID    INTEGER,
     num         INTEGER     NOT NULL,
@@ -216,6 +216,11 @@ COMMIT
 /*
 < One query (per table) of the form: SELECT * FROM table; in order to print out your database > 
 */
+SELECT * FROM Coach;
+SELECT * FROM Players;
+SELECT * FROM Teams;
+SELECT * FROM Performance;
+SELECT * FROM Game;
 -- 
 /*
 < The SQL queries>. Include the following for each query: 
