@@ -210,6 +210,8 @@ INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
 INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
 INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner',29,8,2,'West');
 INSERT INTO Teams (4,'UNC','Rameses'33,7,1,'East');
+INSERT INTO Teams (5,'Kansas','Big Jay',33,5,1,'Midwest');
+INSERT INTO Teams (6,'Texas A&M','Reveille IX',33,5,5,'South');
 --Chamionships
 INSERT INTO Chamionships(1,2016);
 INSERT INTO Chamionships(1,1985);
@@ -228,6 +230,10 @@ INSERT INTO Coach (1,'Jay','Wright',441,237,'Villanova',2001);
 INSERT INTO Coach (2,'Jim','Boeheim',988,346,'Syracuse',1976);
 INSERT INTO Coach (3,'Roy','Williams',783,209,'UNC',2003);
 INSERT INTO Coach (4,'Lon','Kruger',590,361,'Oklahoma',2011);
+
+INSERT INTO PreviouslyCoached(3,5,1988,2004); 
+INSERT INTO PreviouslyCoached,4,6,1982,1986); 
+
 
 
 SET FEEDBACK ON 
