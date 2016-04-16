@@ -244,7 +244,7 @@ INSERT INTO Performance(8,1,15,3,3);
 INSERT INTO Performance(2,1,8,2);		
 INSERT INTO Performance(1,1,0,0,0);		
 INSERT INTO Performance(4,1,23,8,4);		
-1		Villanova	Mikal Bridges(11,1,11,20);		
+INSERT INTO Performance(11,1,11,20);		
 								
 INSERT INTO Performance,45,1,4,0,0);		
 INSERT INTO Performance(35,1,0,0,0);		
@@ -253,12 +253,12 @@ INSERT INTO Performance(42,1,2,5,0);
 INSERT INTO Performance(47,1,6,4,1);		
 INSERT INTO Performance(34,1,0,1,1);		
 INSERT INTO Performance(48,1,1,2,0);	
-INSERT INTO Performance(32,1,		Oklahoma	Christian James	5	0	1		
+INSERT INTO Performance(32,1,5,0,1);		
 INSERT INTO Performance(36,1,8,1,1);		
 INSERT INTO Performance(49,1,12,4,2);		
-INSERT INTO Performance(46,1,4,1,0	);	
+INSERT INTO Performance(46,1,4,1,0);	
 INSERT INTO Performance(33,1,0,0,0);		
-INSERT INTO Performance(39,1,0,0,0	);	
+INSERT INTO Performance(39,1,0,0,0);	
 INSERT INTO Performance(40,1,9,7,2);		
 
 
