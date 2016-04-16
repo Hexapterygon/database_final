@@ -234,6 +234,33 @@ INSERT INTO Coach (4,'Lon','Kruger',590,361,'Oklahoma',2011);
 INSERT INTO PreviouslyCoached(3,5,1988,2004); 
 INSERT INTO PreviouslyCoached,4,6,1982,1986); 
 
+INSERT INTO Performance(10,1,10,6,3);		
+INSERT INTO Performance(3,1,18,8,1);		
+INSERT INTO Performance(9,1,0,0,0);	
+INSERT INTO Performance(14,1,0,0,0);		
+INSERT INTO Performance(13,1,,0,2,1);		
+INSERT INTO Performance(6,1,10,2,0);		
+INSERT INTO Performance(8,1,15,3,3);		
+INSERT INTO Performance(2,1,8,2);		
+INSERT INTO Performance(1,1,0,0,0);		
+INSERT INTO Performance(4,1,23,8,4);		
+1		Villanova	Mikal Bridges(11,1,11,20);		
+								
+INSERT INTO Performance,45,1,4,0,0);		
+INSERT INTO Performance(35,1,0,0,0);		
+INSERT INTO Performance(38,1,0,1,0);		
+INSERT INTO Performance(42,1,2,5,0);		
+INSERT INTO Performance(47,1,6,4,1);		
+INSERT INTO Performance(34,1,0,1,1);		
+INSERT INTO Performance(48,1,1,2,0);	
+INSERT INTO Performance(32,1,		Oklahoma	Christian James	5	0	1		
+INSERT INTO Performance(36,1,8,1,1);		
+INSERT INTO Performance(49,1,12,4,2);		
+INSERT INTO Performance(46,1,4,1,0	);	
+INSERT INTO Performance(33,1,0,0,0);		
+INSERT INTO (39,1,0,0,0	);	
+INSERT INTO (40,1,9,7,2);		
+
 
 
 
