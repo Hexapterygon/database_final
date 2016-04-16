@@ -258,8 +258,8 @@ INSERT INTO Performance(36,1,8,1,1);
 INSERT INTO Performance(49,1,12,4,2);		
 INSERT INTO Performance(46,1,4,1,0	);	
 INSERT INTO Performance(33,1,0,0,0);		
-INSERT INTO (39,1,0,0,0	);	
-INSERT INTO (40,1,9,7,2);		
+INSERT INTO Performance(39,1,0,0,0	);	
+INSERT INTO Performance(40,1,9,7,2);		
 
 
 
