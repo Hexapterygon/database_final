@@ -233,7 +233,7 @@ INSERT INTO Coach (4,'Lon','Kruger',590,361,'Oklahoma',2011);
 
 INSERT INTO PreviouslyCoached(3,5,1988,2004); 
 INSERT INTO PreviouslyCoached,4,6,1982,1986); 
-
+-- Performances for Villanova in game 1
 INSERT INTO Performance(10,1,10,6,3);		
 INSERT INTO Performance(3,1,18,8,1);		
 INSERT INTO Performance(9,1,0,0,0);	
@@ -245,7 +245,7 @@ INSERT INTO Performance(2,1,8,2);
 INSERT INTO Performance(1,1,0,0,0);		
 INSERT INTO Performance(4,1,23,8,4);		
 INSERT INTO Performance(11,1,11,20);		
-								
+--Performances for Oklahoma in game 1 							
 INSERT INTO Performance,45,1,4,0,0);		
 INSERT INTO Performance(35,1,0,0,0);		
 INSERT INTO Performance(38,1,0,1,0);		
