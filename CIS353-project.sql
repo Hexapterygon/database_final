@@ -136,12 +136,12 @@ SET FEEDBACK OFF
     See the Sailors database as an example.
 */
 --Teams
-INSERT INTO Teams VALUES (1,'Villanova','Will D. Cat', 2016);
-INSERT INTO Teams VALUES (2,'Syracuse','Otto the Orange', 2016);
-INSERT INTO Teams VALUES(3,'Oklahoma','Boomer and Sooner', 2016);
-INSERT INTO Teams VALUES(4,'UNC','Rameses', 2016);
-INSERT INTO Teams VALUES(5,'Kansas','Big Jay', 2016);
-INSERT INTO Teams VALUES(6,'Texas A&M','Reveille IX', 2016);
+INSERT INTO Teams VALUES (1,'Villanova','Will D. Cat');
+INSERT INTO Teams VALUES (2,'Syracuse','Otto the Orange');
+INSERT INTO Teams VALUES(3,'Oklahoma','Boomer and Sooner');
+INSERT INTO Teams VALUES(4,'UNC','Rameses');
+INSERT INTO Teams VALUES(5,'Kansas','Big Jay');
+INSERT INTO Teams VALUES(6,'Texas A&M','Reveille IX');
 --2016 Season Data
 INSERT INTO History VALUES(1, 2016, 29, 5, 'South', 2);
 INSERT INTO History VALUES(2, 2016, 19, 13, 'Midwest', 10);
