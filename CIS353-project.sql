@@ -21,13 +21,12 @@ CREATE TABLE Teams
     mascot      CHAR(15)    NOT NULL,
     --wins        INTEGER     NOT NULL,
     --losses      INTEGER     NOT NULL,
-    region      CHAR(15)    NOT NULL,
     year        INTEGER     NOT NULL,
     
 
     --CONSTRAINT teamIC3 UNIQUE (seed, region), 
     --CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
-    CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
+    --CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
 CREATE TABLE Championships
@@ -138,7 +137,7 @@ CREATE TABLE History
     CONSTRAINT hIC3 PRIMARY KEY(teamID, year),
     CONSTRAINT hIC4 CHECK (wins >= 0),
     CONSTRAINT hIC5 CHECK (losses >= 0),
-    CONSTRAINT hIC6 region REFERENCES Team(region),
+    CONSTRAINT hIC6 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
     CONSTRAINT hIC7 UNIQUE (seed, region),
     CONSTRAINT hIC8 CHECK(seed >= 1 AND seed <= 16),
 );
@@ -223,13 +222,34 @@ INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
 
 --Teams
-INSERT INTO Teams (1,'Villanova','Will D. Cat','East', 2016);
-INSERT INTO Teams (2,'Syracuse','Otto the Orange','Midwest', 2016);
-INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner','West', 2016);
-INSERT INTO Teams (4,'UNC','Rameses','East', 2016);
+INSERT INTO Teams (1,'Villanova','Will D. Cat', 2016);
+INSERT INTO Teams (2,'Syracuse','Otto the Orange', 2016);
+INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner', 2016);
+INSERT INTO Teams (4,'UNC','Rameses', 2016);
+INSERT INTO Teams (5,'Kansas','Big Jay', 2016);
+INSERT INTO Teams (6,'Texas A&M','Reveille IX', 2016);
 
-INSERT INTO Teams (5,'Kansas','Big Jay','Midwest', 2016);
-INSERT INTO Teams (6,'Texas A&M','Reveille IX','South', 2016);
+--2016 Season Data
+INSERT INTO History(1, 2016, 29, 5, 'South', 2);
+INSERT INTO History(2, 2016, 19, 13, 'Midwest', 10);
+INSERT INTO History(3, 2016, 25, 7, 'West', 2);
+INSERT INTO History(4, 2016, 28, 5, 'East', 2);
+
+--2015 Season Data
+INSERT INTO History(1, 2015, 33, 3, 'East', 1);
+INSERT INTO History(5, 2015, 27, 9, 'Midwest', 2);
+INSERT INTO History(3, 2015, 24, 11, 'West', 10);
+INSERT INTO History(4, 2015, 26, 12, 'East', 4);
+
+    teamID      INTEGER,
+    year        INTEGER     NOT NULL,
+    wins        INTEGER     NOT NULL,
+    losses      INTEGER     NOT NULL,
+    region      CHAR(15)    NOT NULL,
+    seed        INTEGER     NOT NULL,
+
+
+
 --Chamionships
 INSERT INTO Chamionships(1,2016);
 INSERT INTO Chamionships(1,1985);
