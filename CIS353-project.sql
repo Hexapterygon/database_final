@@ -277,6 +277,28 @@ INSERT INTO Performance VALUES(39,1,0,0,0);
 INSERT INTO Performance VALUES(40,1,9,7,2);		
 --
 --
+
+
+
+--performance villanova game 3
+INSERT INTO Performance VALUES(3,3,14,0,2);
+INSERT INTO Performance VALUES(10,3,9,1,6);
+INSERT INTO Performance VALUES (13,3,0,0,0);
+INSERT INTO Performance VALUES(2,3,4,0,1);
+INSERT INTO Performance VALUES(4,3,12,1,8);
+INSERT INTO Performance VALUES(8,3,16,0,2);
+INSERT IN Performance VALUES(6,3,20,0,2);
+INSERT IN Performance VALUES(11,3,2,0,2);
+--Performance UNC game 3
+INSERT IN Performance VALUES(56,3,14,1,8);
+INSERT IN Performance VALUES(63,3,0,0,1);
+INSERT IN Performance VALUES(54,3,4,2,4);
+INSERT IN Performance VALUES(53,3,4,6,7);
+INSERT IN Performance VALUES(65,3,9,2,4);
+INSERT IN Performance VALUES(51,3,0,0,0);
+INSERT IN Performance VALUES(50,3,2,1,1);
+INSERT IN Performance VALUES(55,3,21,2,5);
+INSERT IN Performance VALUES(52,3,20,0,3);
 SET FEEDBACK ON 
 COMMIT;
 -- 
