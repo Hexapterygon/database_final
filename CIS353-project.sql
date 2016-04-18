@@ -43,8 +43,7 @@ CREATE TABLE Players
     teamID      INTEGER,     --not sure on nullness
 --
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
-        CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
-                         ON DELETE CASCADE,
+        CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
         CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
 );
 --  -------------------------------------------------------
