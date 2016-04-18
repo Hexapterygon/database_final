@@ -240,10 +240,10 @@ INSERT INTO Coach VALUES(2,'Jim','Boeheim',988,346);
 INSERT INTO Coach VALUES(3,'Roy','Williams',783,209);
 INSERT INTO Coach VALUES(4,'Lon','Kruger',590,361);
 --When and Where coaches coached
-INSERT INTO Coaches VALUES(1,1,2001, );
-INSERT INTO Coaches VALUES(2,2,1976, );
-INSERT INTO Coaches VALUES(3,4,2003, );
-INSERT INTO Coaches VALUES(4,3,2011, );
+INSERT INTO Coaches VALUES(1,1,2001,);
+INSERT INTO Coaches VALUES(2,2,1976,);
+INSERT INTO Coaches VALUES(3,4,2003,);
+INSERT INTO Coaches VALUES(4,3,2011,);
 INSERT INTO Coaches VALUES(3,5,1988,2004); 
 INSERT INTO Coaches VALUES(4,6,1982,1986); 
 -- Performances for Villanova in game 1
