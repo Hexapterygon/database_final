@@ -1,7 +1,7 @@
 SPOOL project.out 
 SET ECHO ON 
---SET WRAP OFF
-SET LINESIZE 1500
+SET WRAP OFF
+SET LINESIZE 3000
 /* 
 CIS 353
  - Database Design Project 
