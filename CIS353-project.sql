@@ -233,17 +233,17 @@ INSERT INTO Chamionships VALUES(4,1957);
 --Games
 INSERT INTO Game VALUES(1,'Final Four','2016-04-02',95,51,1,3,1,2);
 INSERT INTO Game VALUES(2,'Final Four','2016-04-02',83,66,4,2,4,3);
-INSERT INTO Game VALUES(3,'Final Four', '2016-04-02',77,74,1,4,1,);
+INSERT INTO Game VALUES(3,'Final Four', '2016-04-02',77,74,1,4,1,NULL);
 --Coaches
 INSERT INTO Coach VALUES(1,'Jay','Wright',441,237);
 INSERT INTO Coach VALUES(2,'Jim','Boeheim',988,346);
 INSERT INTO Coach VALUES(3,'Roy','Williams',783,209);
 INSERT INTO Coach VALUES(4,'Lon','Kruger',590,361);
 --When and Where coaches coached
-INSERT INTO Coaches VALUES(1,1,2001,);
-INSERT INTO Coaches VALUES(2,2,1976,);
-INSERT INTO Coaches VALUES(3,4,2003,);
-INSERT INTO Coaches VALUES(4,3,2011,);
+INSERT INTO Coaches VALUES(1,1,2001,NULL);
+INSERT INTO Coaches VALUES(2,2,1976,NULL);
+INSERT INTO Coaches VALUES(3,4,2003,NULL);
+INSERT INTO Coaches VALUES(4,3,2011,NULL);
 INSERT INTO Coaches VALUES(3,5,1988,2004); 
 INSERT INTO Coaches VALUES(4,6,1982,1986); 
 -- Performances for Villanova in game 1
@@ -251,7 +251,7 @@ INSERT INTO Performance VALUES(10,1,10,6,3);
 INSERT INTO Performance VALUES(3,1,18,8,1);		
 INSERT INTO Performance VALUES(9,1,0,0,0);	
 INSERT INTO Performance VALUES(14,1,0,0,0);		
-INSERT INTO Performance VALUES(13,1,,0,2,1);		
+INSERT INTO Performance VALUES(13,1,0,2,1);		
 INSERT INTO Performance VALUES(6,1,10,2,0);		
 INSERT INTO Performance VALUES(8,1,15,3,3);		
 INSERT INTO Performance VALUES(2,1,8,2);		
