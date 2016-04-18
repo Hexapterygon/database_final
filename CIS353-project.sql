@@ -13,6 +13,7 @@ CIS 353
 < The SQL/DDL code that creates your schema > 
 In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. 
 */
+
 CREATE TABLE Teams
 (
     teamID      INTEGER,
@@ -68,7 +69,7 @@ CREATE TABLE Game
     winner      INTEGER    NOT NULL,
     teamOne     INTEGER    NOT NULL,
     teamTwo     INTEGER    NOT NULL,
-    nextGID     INTEGER 
+    nextGID     INTEGER,
 
     --needs integrity constraints yet
     CONSTRAINT gameIC1 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
@@ -111,20 +112,35 @@ CREATE TABLE Performance
 );
 ---------------------------------------------------------
 CREATE TABLE Coaches
-
 (
-coachID       INTEGER,
-teamID        INTEGER,
-startYear     INTEGER    Not NULL,
-endYear       INTEGER,
 
-CONSTRAINT cIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
-CONSTRAINT cIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
-CONSTRAINT cIC3 PRIMARY KEY (coachID, teamID),
-CONSTRAINT cIC4 CHECK( startYear <= endYear)
+    coachID       INTEGER,
+    teamID        INTEGER,
+    startYear     INTEGER    Not NULL,
+    endYear       INTEGER,
+
+    CONSTRAINT cIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
+    CONSTRAINT cIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
+    CONSTRAINT cIC3 PRIMARY KEY (coachID, teamID),
+    CONSTRAINT cIC4 CHECK( startYear <= endYear)
 
 );
--- 
+-- ------------------------------------------------------
+CREATE TABLE History
+(
+    playerID    INTEGER,
+    year        INTEGER      NOT NULL,
+    pRank       INTEGER      NOT NULL,
+    totPoints   INTEGER      NOT NULL,
+    
+    CONSTRAINT hIC1 FOREIGN KEY(playerID) REFERENCES Player(playerID),
+    CONSTRAINT hIC2 year REFERENCES Player(year),
+    CONSTRAINT hIC3 PRIMARY KEY(playerID, year),
+    CONSTRAINT hIC4 pRank >= 1,
+    CONSTRAINT hIC5 totPoints >= 0
+
+);
+-- ------------------------------------------------------
 SET FEEDBACK OFF 
 /*< The INSERT statements that populate the tables> 
     Important: Keep the number of rows in each
@@ -265,8 +281,6 @@ INSERT INTO Performance(39,1,0,0,0);
 INSERT INTO Performance(40,1,9,7,2);		
 
 
-
-
 SET FEEDBACK ON 
 COMMIT 
 -- 
@@ -287,10 +301,10 @@ FROM Performance;
 
 SELECT * 
 FROM Game;
-/*
+
 SELECT *
-FROM PreviouslyCoached
-*/
+FROM Coaches;
+
 ------------------------------------------------------
 /*
 < The SQL queries>. Include the following for each query: 
