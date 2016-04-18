@@ -222,14 +222,14 @@ INSERT INTO Players VALUES(63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players VALUES(64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players VALUES(65,44,'Justin','Jackson',80,'So',4);
 --Championships
-INSERT INTO Chamionships VALUES(1,2016);
-INSERT INTO Chamionships VALUES(1,1985);
-INSERT INTO Chamionships VALUES(2,2003);
-INSERT INTO Chamionships VALUES(4,2009);
-INSERT INTO Chamionships VALUES(4,2005);
-INSERT INTO Chamionships VALUES(4,1993);
-INSERT INTO Chamionships VALUES(4,1982);
-INSERT INTO Chamionships VALUES(4,1957);
+INSERT INTO Championships VALUES(1,2016);
+INSERT INTO Championships VALUES(1,1985);
+INSERT INTO Championships VALUES(2,2003);
+INSERT INTO Championships VALUES(4,2009);
+INSERT INTO Championships VALUES(4,2005);
+INSERT INTO Championships VALUES(4,1993);
+INSERT INTO Championships VALUES(4,1982);
+INSERT INTO Championships VALUES(4,1957);
 --Games
 INSERT INTO Game VALUES(1,'Final Four','2016-04-02',95,51,1,3,1,2);
 INSERT INTO Game VALUES(2,'Final Four','2016-04-02',83,66,4,2,4,3);
