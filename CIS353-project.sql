@@ -21,9 +21,9 @@ CREATE TABLE Teams
     mascot      CHAR(15)    NOT NULL,
     --wins        INTEGER     NOT NULL,
     --losses      INTEGER     NOT NULL,
-    year        INTEGER     NOT NULL,
+   
     
-
+      CONSTRAINT teamIC1 PRIMARY KEY (teamID)
     --CONSTRAINT teamIC3 UNIQUE (seed, region), 
     --CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
     --CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
@@ -50,9 +50,10 @@ CREATE TABLE Players
     teamID      INTEGER,     --not sure on nullness
 
     --needs integrity constraints yet
-        CONSTRAINT playerIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID)
+        CONSTRAINT playerIC1 PRIMARY KEY (playerID),
+        CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
                          ON DELETE CASCADE,
-        CONSTRAINT playerIC2 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
+        CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
         
 );
 --  -------------------------------------------------------
@@ -69,12 +70,13 @@ CREATE TABLE Game
     nextGID     INTEGER,
 
     --needs integrity constraints yet
-    CONSTRAINT gameIC1 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
-    CONSTRAINT gameIC2 CHECK(winScore >=0 AND loseScore >= 0),
-    CONSTRAINT gameIC3 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
-    CONSTRAINT gameIC4 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
-    CONSTRAINT gameIC5 CHECK (winner = teamOne OR winner = teamTwo),
-    CONSTRAINT gameIC6 FOREIGN KEY nextGID REFERENCES Game(gameID)
+    CONSTRAINT gameIC1 PRIMARY KEY (gameID),
+    CONSTRAINT gameIC2 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
+    CONSTRAINT gameIC3 CHECK(winScore >=0 AND loseScore >= 0),
+    CONSTRAINT gameIC4 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
+    CONSTRAINT gameIC5 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
+    CONSTRAINT gameIC6 CHECK (winner = teamOne OR winner = teamTwo),
+    CONSTRAINT gameIC7 FOREIGN KEY nextGID REFERENCES Game(gameID)
 );
 --  -------------------------------------------------------
 CREATE TABLE Coach
@@ -86,8 +88,9 @@ CREATE TABLE Coach
     losses      INTEGER      NOT NULL,
 
     --needs integrity constraints yet
-    CONSTRAINT coachIC1 CHECK(wins >= 0),
-    CONSTRAINT coachIC2 CHECK(losses >= 0),
+    CONSTRAINT coachIC1 PRIMARY KEY(coachID),
+    CONSTRAINT coachIC2 CHECK(wins >= 0),
+    CONSTRAINT coachIC3 CHECK(losses >= 0),
 );
 --  -------------------------------------------------------
 CREATE TABLE Performance
@@ -133,13 +136,12 @@ CREATE TABLE History
     seed        INTEGER     NOT NULL,
     
     CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Team(teamID),
-    CONSTRAINT hIC2 year REFERENCES Team(year),
-    CONSTRAINT hIC3 PRIMARY KEY(teamID, year),
-    CONSTRAINT hIC4 CHECK (wins >= 0),
-    CONSTRAINT hIC5 CHECK (losses >= 0),
-    CONSTRAINT hIC6 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
-    CONSTRAINT hIC7 UNIQUE (seed, region),
-    CONSTRAINT hIC8 CHECK(seed >= 1 AND seed <= 16),
+    CONSTRAINT hIC2 PRIMARY KEY(teamID, year),
+    CONSTRAINT hIC3 CHECK (wins >= 0),
+    CONSTRAINT hIC4 CHECK (losses >= 0),
+    CONSTRAINT hIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
+    CONSTRAINT hIC6 UNIQUE (seed, region),
+    CONSTRAINT hIC7 CHECK(seed >= 1 AND seed <= 16),
 );
 -- ------------------------------------------------------
 SET FEEDBACK OFF 
