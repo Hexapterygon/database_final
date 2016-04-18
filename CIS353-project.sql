@@ -243,16 +243,8 @@ INSERT INTO History(5, 2015, 27, 9, 'Midwest', 2);
 INSERT INTO History(3, 2015, 24, 11, 'West', 10);
 INSERT INTO History(4, 2015, 26, 12, 'East', 4);
 
-    teamID      INTEGER,
-    year        INTEGER     NOT NULL,
-    wins        INTEGER     NOT NULL,
-    losses      INTEGER     NOT NULL,
-    region      CHAR(15)    NOT NULL,
-    seed        INTEGER     NOT NULL,
 
-
-
---Chamionships
+--Championships
 INSERT INTO Chamionships(1,2016);
 INSERT INTO Chamionships(1,1985);
 INSERT INTO Chamionships(2,2003);
@@ -271,10 +263,10 @@ INSERT INTO Coach (2,'Jim','Boeheim',988,346);
 INSERT INTO Coach (3,'Roy','Williams',783,209);
 INSERT INTO Coach (4,'Lon','Kruger',590,361);
 
-INSERT INTO Coaches(1,1,2001, )
-INSERT INTO Coaches(2,2,1976, )
-INSERT INTO Coaches(3,4,2003, )
-INSERT INTO Coaches(4,3,2011, )
+INSERT INTO Coaches(1,1,2001, );
+INSERT INTO Coaches(2,2,1976, );
+INSERT INTO Coaches(3,4,2003, );
+INSERT INTO Coaches(4,3,2011, );
 INSERT INTO Coaches(3,5,1988,2004); 
 INSERT INTO Coaches(4,6,1982,1986); 
 
@@ -330,6 +322,9 @@ FROM Game;
 
 SELECT *
 FROM Coaches;
+
+SELECT *
+FROM History;
 
 ------------------------------------------------------
 /*
