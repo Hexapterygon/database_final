@@ -19,8 +19,7 @@ CREATE TABLE Teams
     teamID      INTEGER,
     name        CHAR(15)    NOT NULL,
     mascot      CHAR(15)    NOT NULL,
-    
-      CONSTRAINT teamIC1 PRIMARY KEY (teamID)
+    CONSTRAINT teamIC1 PRIMARY KEY (teamID)
     --CONSTRAINT teamIC3 UNIQUE (seed, region), 
     --CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
     --CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
