@@ -19,16 +19,14 @@ CREATE TABLE Teams
     teamID      INTEGER,
     name        CHAR(15)    NOT NULL,
     mascot      CHAR(15)    NOT NULL,
-    wins        INTEGER     NOT NULL,
-    losses      INTEGER     NOT NULL,
-    seed        INTEGER     NOT NULL,
+    --wins        INTEGER     NOT NULL,
+    --losses      INTEGER     NOT NULL,
     region      CHAR(15)    NOT NULL,
+    year        INTEGER     NOT NULL,
+    
 
-    --needs integrity constraints yet
-    CONSTRAINT teamIC1 CHECK (wins >= 0),
-    CONSTRAINT teamIC2 CHECK (losses >= 0), 
-    CONSTRAINT teamIC3 UNIQUE (seed, region), 
-    CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
+    --CONSTRAINT teamIC3 UNIQUE (seed, region), 
+    --CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
     CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
@@ -128,19 +126,21 @@ CREATE TABLE Coaches
 -- ------------------------------------------------------
 CREATE TABLE History
 (
-    playerID    INTEGER,
-    year        INTEGER      NOT NULL,
-    pRank       INTEGER,
-    totPoints   INTEGER      NOT NULL,
-    totRebounds INTEGER      NOT NULL,
+    teamID      INTEGER,
+    year        INTEGER     NOT NULL,
+    wins        INTEGER     NOT NULL,
+    losses      INTEGER     NOT NULL,
+    region      CHAR(15)    NOT NULL,
+    seed        INTEGER     NOT NULL,
     
-    CONSTRAINT hIC1 FOREIGN KEY(playerID) REFERENCES Player(playerID),
-    CONSTRAINT hIC2 year REFERENCES Player(year),
-    CONSTRAINT hIC3 PRIMARY KEY(playerID, year),
-    --CONSTRAINT hIC4 pRank >= 1, only top 100 players are ranked
-    CONSTRAINT hIC5 totPoints >= 0,
-    CONSTRAINT hIC6 totRebounds >= 0
-
+    CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Team(teamID),
+    CONSTRAINT hIC2 year REFERENCES Team(year),
+    CONSTRAINT hIC3 PRIMARY KEY(teamID, year),
+    CONSTRAINT hIC4 CHECK (wins >= 0),
+    CONSTRAINT hIC5 CHECK (losses >= 0),
+    CONSTRAINT hIC6 region REFERENCES Team(region),
+    CONSTRAINT hIC7 UNIQUE (seed, region),
+    CONSTRAINT hIC8 CHECK(seed >= 1 AND seed <= 16),
 );
 -- ------------------------------------------------------
 SET FEEDBACK OFF 
@@ -151,8 +151,6 @@ SET FEEDBACK OFF
     See the Sailors database as an example.
 */
    
- 
- 
  
 --Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
@@ -224,14 +222,14 @@ INSERT INTO Players (63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
 
-INSERT INTO History(65, 'Sr', , 410, 132);
 --Teams
-INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
-INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
-INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner',29,8,2,'West');
-INSERT INTO Teams (4,'UNC','Rameses'33,7,1,'East');
-INSERT INTO Teams (5,'Kansas','Big Jay',33,5,1,'Midwest');
-INSERT INTO Teams (6,'Texas A&M','Reveille IX',33,5,5,'South');
+INSERT INTO Teams (1,'Villanova','Will D. Cat','East', 2016);
+INSERT INTO Teams (2,'Syracuse','Otto the Orange','Midwest', 2016);
+INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner','West', 2016);
+INSERT INTO Teams (4,'UNC','Rameses','East', 2016);
+
+INSERT INTO Teams (5,'Kansas','Big Jay','Midwest', 2016);
+INSERT INTO Teams (6,'Texas A&M','Reveille IX','South', 2016);
 --Chamionships
 INSERT INTO Chamionships(1,2016);
 INSERT INTO Chamionships(1,1985);
