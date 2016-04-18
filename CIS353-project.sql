@@ -95,7 +95,6 @@ CREATE TABLE Performance
     CONSTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Player(playerID),
     CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
     CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
-    
 );
 ---------------------------------------------------------
 CREATE TABLE Coaches
