@@ -65,7 +65,7 @@ CREATE TABLE Game
     CONSTRAINT gameIC4 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
     CONSTRAINT gameIC5 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
     CONSTRAINT gameIC6 CHECK (winner = teamOne OR winner = teamTwo),
-    CONSTRAINT gameIC7 FOREIGN KEY nextGID REFERENCES Game(gameID)
+    CONSTRAINT gameIC7 FOREIGN KEY (nextGID) REFERENCES Game(gameID)
 );
 --  -------------------------------------------------------
 CREATE TABLE Coach
