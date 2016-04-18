@@ -136,7 +136,7 @@ SET FEEDBACK OFF
     See the Sailors database as an example.
 */
 --Villanova Players
-INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
+INSERT INTO Players (1,0,'Henry','Lowe',71,'Sr',1);
 INSERT INTO Players (2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' ,1);
 INSERT INTO Players (3,2 ,'Kris' ,'Jenkins' ,78 ,'Jr' ,1);
 INSERT INTO Players (4,3 ,'Josh' ,'Hart' ,77 ,'Jr' ,1);
