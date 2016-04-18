@@ -69,12 +69,19 @@ CREATE TABLE Game
     teamTwo     INTEGER    NOT NULL,
     nextGID     INTEGER,
 --
+--each game has a unqiue gameID
     CONSTRAINT gameIC1 PRIMARY KEY (gameID),
+    --each game takes place in one of these regions
     CONSTRAINT gameIC2 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
+    --scores cannot be negative
     CONSTRAINT gameIC3 CHECK(winScore >=0 AND loseScore >= 0),
+    --teamOne is a team in the Teams table
     CONSTRAINT gameIC4 FOREIGN KEY (teamOne) REFERENCES Teams(teamID),
+    --teamTwo is a team in the  Teams table
     CONSTRAINT gameIC5 FOREIGN KEY (teamTwo) REFERENCES Teams(teamID),
+    --winner is one of the two teams
     CONSTRAINT gameIC6 CHECK (winner = teamOne OR winner = teamTwo),
+    --next game is in games table
     CONSTRAINT gameIC7 FOREIGN KEY (nextGID) REFERENCES Game(gameID)
 );
 --  -------------------------------------------------------
