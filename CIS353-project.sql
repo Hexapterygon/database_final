@@ -177,13 +177,13 @@ INSERT INTO Players VALUES(19,10,'Trevor','Cooney',76,'Sr',2);
 INSERT INTO Players VALUES(20,11,'Adrian','Autry',72,'Fr',2);
 INSERT INTO Players VALUES(21,13,'Paschal','Chukwu',86,'So',2);
 INSERT INTO Players VALUES(22,14,'Kaleb','Joseph',75,'So',2);
-INSERT INTO Players VALUES(23,20'Tyler','Lydon',80,'Fr',2);
+INSERT INTO Players VALUES(23,20,'Tyler','Lydon',80,'Fr',2);
 INSERT INTO Players VALUES(24,21,'Tyler','Roberson',80,'Jr',2);
 INSERT INTO Players VALUES(25,23,'Malachi','Richardson',78,'Fr',2);
 INSERT INTO Players VALUES(26,25,'Evan','Dourdas',72,'Fr',2);
 INSERT INTO Players VALUES(27,32,'DaJuan','Coleman',81,'Sr',2);
 INSERT INTO Players VALUES(28,33,'Jonathon','Radner',70,'Fr',2);
-INSERT INTO Players VALUES(29,34,'Doyin','Akintobi-Adeyeye',78,'So',2);
+INSERT INTO Players VALUES(29,34,'Doyin','Akintobi',78,'So',2);
 INSERT INTO Players VALUES(30,35,'Chinonso','Obokoh',81,'So',2);
 INSERT INTO Players VALUES(31,54,'Ky','Feldman',70, 'Fr',2);
 INSERT INTO Players VALUES(32,55,'Christian','White',70,'Sr',2);
@@ -277,7 +277,7 @@ INSERT INTO Performance VALUES(40,1,9,7,2);
 --
 --
 SET FEEDBACK ON 
-COMMIT 
+COMMIT;
 -- 
 /*
 < One query (per table) of the form: SELECT * FROM table; in order to print out your database > 
