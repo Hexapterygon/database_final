@@ -28,7 +28,7 @@ CREATE TABLE Championships
     teamID      INTEGER,
     yearWon     INTEGER,
     --
-        CONSTRAINT champIC1 FORIEGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
+        CONSTRAINT champIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
         CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
 );
 -- -------------------------------------------------------
