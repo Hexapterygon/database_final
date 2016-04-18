@@ -19,8 +19,6 @@ CREATE TABLE Teams
     teamID      INTEGER,
     name        CHAR(15)    NOT NULL,
     mascot      CHAR(15)    NOT NULL,
-    --wins        INTEGER     NOT NULL,
-    --losses      INTEGER     NOT NULL,
    
     
       CONSTRAINT teamIC1 PRIMARY KEY (teamID)
