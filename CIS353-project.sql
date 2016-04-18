@@ -130,14 +130,16 @@ CREATE TABLE History
 (
     playerID    INTEGER,
     year        INTEGER      NOT NULL,
-    pRank       INTEGER      NOT NULL,
+    pRank       INTEGER,
     totPoints   INTEGER      NOT NULL,
+    totRebounds INTEGER      NOT NULL,
     
     CONSTRAINT hIC1 FOREIGN KEY(playerID) REFERENCES Player(playerID),
     CONSTRAINT hIC2 year REFERENCES Player(year),
     CONSTRAINT hIC3 PRIMARY KEY(playerID, year),
-    CONSTRAINT hIC4 pRank >= 1,
-    CONSTRAINT hIC5 totPoints >= 0
+    --CONSTRAINT hIC4 pRank >= 1, only top 100 players are ranked
+    CONSTRAINT hIC5 totPoints >= 0,
+    CONSTRAINT hIC6 totRebounds >= 0
 
 );
 -- ------------------------------------------------------
@@ -149,6 +151,8 @@ SET FEEDBACK OFF
     See the Sailors database as an example.
 */
    
+ 
+ 
  
 --Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
@@ -219,6 +223,8 @@ INSERT INTO Players (62,34,'Toby','Egbuna',76,'Sr',4);
 INSERT INTO Players (63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
+
+INSERT INTO History(
 --Teams
 INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
 INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
