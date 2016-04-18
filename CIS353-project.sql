@@ -275,11 +275,30 @@ INSERT INTO Performance VALUES(46,1,4,1,0);
 INSERT INTO Performance VALUES(33,1,0,0,0);		
 INSERT INTO Performance VALUES(39,1,0,0,0);	
 INSERT INTO Performance VALUES(40,1,9,7,2);		
---
---
-
-
-
+--Performances for North Carolina Game 2
+ INSERT INTO Performance VALUES(62,2,0,0,0);
+ INSERT INTO Performance VALUES(56,2,16,4,9);
+ INSERT INTO Performance VALUES(52,2,4,2,3);
+ INSERT INTO Performance VALUES(53,2,15,5,8);
+ INSERT INTO Performance VALUES(54,2,6,1,4);
+ INSERT INTO Performance VALUES(61,2,0,0,0);
+ INSERT INTO Performance VALUES(65,2,16,0,3);
+ INSERT INTO Performance VALUES(51,2,5,2,5);
+ INSERT INTO Performance VALUES(58,2,0,0,0);
+ INSERT INTO Performance VALUES(50,2,0,1,2);
+ INSERT INTO Performance VALUES(57,2,0,0,0);
+ INSERT INTO Performance VALUES(64,2,0,0,0);
+ INSERT INTO Performance VALUES(55,2,13,0,2);
+ INSERT INTO Performance VALUES(63,2,8,1,7);
+ INSERT INTO Performance VALUES(59,2,0,0,0);
+ --Performances for Syracuse Game 2
+ INSERT INTO Performance VALUES(15,2,12,0,3);
+ INSERT INTO Performance VALUES(24,2,2,6,9);
+ INSERT INTO Performance VALUES(27,2,5,4,4);
+ INSERT INTO Performance VALUES(23,2,8,2,5);
+ INSERT INTO Performance VALUES(25,2,17,2,5);
+ INSERT INTO Performance VALUES(19,2,22,2,5);
+ INSERT INTO Performance VALUES(16,2,0,0,0);
 --performance villanova game 3
 INSERT INTO Performance VALUES(3,3,14,0,2);
 INSERT INTO Performance VALUES(10,3,9,1,6);
