@@ -224,7 +224,7 @@ INSERT INTO Players (63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
 
-INSERT INTO History(
+INSERT INTO History(65, 'Sr', , 410, 132);
 --Teams
 INSERT INTO Teams (1,'Villanova','Will D. Cat',35,5,2,'East');
 INSERT INTO Teams (2,'Syracuse','Otto the Orange',23,14,10,'Midwest');
