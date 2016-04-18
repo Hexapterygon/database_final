@@ -92,7 +92,7 @@ CREATE TABLE Performance
     CONSTRAINT perIC1 CHECK(points >= 0),
     CONSTRAINT perIC2 CHECK(rebounds >= 0),
     CONSTRAINT perIC3 CHECK(assists >= 0),
-    CONSTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Player(playerID),
+    CONSTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Players(playerID),
     CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
     CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
 );
