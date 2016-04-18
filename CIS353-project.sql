@@ -232,9 +232,9 @@ INSERT INTO Championships VALUES(4,1993);
 INSERT INTO Championships VALUES(4,1982);
 INSERT INTO Championships VALUES(4,1957);
 --Games
-INSERT INTO Game VALUES(1,'Final Four','02-Apr-2016',95,51,1,3,1,2);
-INSERT INTO Game VALUES(2,'Final Four','02-Apr-2016',83,66,4,2,4,3);
 INSERT INTO Game VALUES(3,'Final Four', '02-Apr-2016',77,74,1,4,1,NULL);
+INSERT INTO Game VALUES(2,'Final Four','02-Apr-2016',83,66,4,2,4,3);
+INSERT INTO Game VALUES(1,'Final Four','02-Apr-2016',95,51,1,3,1,2);
 --Coaches
 INSERT INTO Coach VALUES(1,'Jay','Wright',441,237);
 INSERT INTO Coach VALUES(2,'Jim','Boeheim',988,346);
