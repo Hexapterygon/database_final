@@ -123,7 +123,7 @@ CREATE TABLE History
     CONSTRAINT hIC2 PRIMARY KEY(teamID, year),
     CONSTRAINT hIC3 CHECK (wins >= 0),
     CONSTRAINT hIC4 CHECK (losses >= 0),
-    CONSTRAINT hIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
+    CONSTRAINT hIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East')),
     CONSTRAINT hIC6 UNIQUE (seed, region),
     CONSTRAINT hIC7 CHECK(seed >= 1 AND seed <= 16)
 );
