@@ -310,10 +310,10 @@ FROM History;
 3.The SQL code for the query. 
 */
 -- I think this might be a four relation join. It's definitely three.
-SELECT P.firstName, P.lastName, R.points
-FROM P.Players, T.Teams, G.Game, R.Performance
-WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
-      AND T.teamID = 1;
+--SELECT P.firstName, P.lastName, R.points
+--FROM P.Players, T.Teams, G.Game, R.Performance
+--WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
+ --     AND T.teamID = 1;
 -------------------------------------------------------
 /*
 < The insert/delete/update statements  to test the enforcement of ICs> 
