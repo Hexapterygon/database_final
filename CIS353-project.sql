@@ -293,6 +293,9 @@ FROM Teams;
 SELECT * 
 FROM Performance;
 --
+SELECT *
+FROM Championships;
+--
 SELECT * 
 FROM Game;
 --
