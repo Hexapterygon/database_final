@@ -119,7 +119,7 @@ CREATE TABLE History
     region      CHAR(15)    NOT NULL,
     seed        INTEGER     NOT NULL,
     --
-    CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Team(teamID),
+    CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Teams(teamID),
     CONSTRAINT hIC2 PRIMARY KEY(teamID, year),
     CONSTRAINT hIC3 CHECK (wins >= 0),
     CONSTRAINT hIC4 CHECK (losses >= 0),
