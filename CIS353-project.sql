@@ -28,8 +28,7 @@ CREATE TABLE Championships
     teamID      INTEGER,
     yearWon     INTEGER,
     --
-        CONSTRAINT champIC1 FORIEGN KEY (teamID) REFERENCES Teams(teamID) 
-                        ON DELETE CASCADE,
+        CONSTRAINT champIC1 FORIEGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
         CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
 );
 -- -------------------------------------------------------
@@ -128,7 +127,7 @@ CREATE TABLE History
     CONSTRAINT hIC4 CHECK (losses >= 0),
     CONSTRAINT hIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
     CONSTRAINT hIC6 UNIQUE (seed, region),
-    CONSTRAINT hIC7 CHECK(seed >= 1 AND seed <= 16),
+    CONSTRAINT hIC7 CHECK(seed >= 1 AND seed <= 16)
 );
 -- ------------------------------------------------------
 SET FEEDBACK OFF 
