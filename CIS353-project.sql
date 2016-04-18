@@ -257,7 +257,7 @@ INSERT INTO Performance VALUES(8,1,15,3,3);
 INSERT INTO Performance VALUES(2,1,8,1,2);		
 INSERT INTO Performance VALUES(1,1,0,0,0);		
 INSERT INTO Performance VALUES(4,1,23,8,4);		
-INSERT INTO Performance VALUES(11,1,11,20);		
+INSERT INTO Performance VALUES(11,1,11,2,0);		
 --Performances for Oklahoma in game 1 							
 INSERT INTO Performance VALUES(45,1,4,0,0);		
 INSERT INTO Performance VALUES(35,1,0,0,0);		
