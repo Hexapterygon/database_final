@@ -99,11 +99,17 @@ CREATE TABLE Performance
     rebounds    INTEGER    NOT NULL,
     assists     INTEGER    NOT NULL,
 --
+--points can't be negative
     CONSTRAINT perIC1 CHECK(points >= 0),
+    --rebounds can't be negative
     CONSTRAINT perIC2 CHECK(rebounds >= 0),
+    --assists can't be negative
     CONSTRAINT perIC3 CHECK(assists >= 0),
+    --playerID references playerID in Players table
     CONSTRAINT perIC4 FOREIGN KEY (playerID) REFERENCES Players(playerID),
+    --game ID belongs to gameID in games table
     CONSTRAINT perIC5 FOREIGN KEY (gameID) REFERENCES Game(gameID),
+    --each row corrosponds to a certain player in a certain game
     CONSTRAINT perIC6 PRIMARY KEY (playerID, gameID) 
 );
 ---------------------------------------------------------
