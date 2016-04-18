@@ -256,7 +256,7 @@ INSERT INTO Coaches(2,2,1976, )
 INSERT INTO Coaches(3,4,2003, )
 INSERT INTO Coaches(4,3,2011, )
 INSERT INTO Coaches(3,5,1988,2004); 
-INSERT INTO Coaches,4,6,1982,1986); 
+INSERT INTO Coaches(4,6,1982,1986); 
 
 -- Performances for Villanova in game 1
 INSERT INTO Performance(10,1,10,6,3);		
