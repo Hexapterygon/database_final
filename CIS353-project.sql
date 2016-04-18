@@ -254,7 +254,7 @@ INSERT INTO Performance VALUES(14,1,0,0,0);
 INSERT INTO Performance VALUES(13,1,0,2,1);		
 INSERT INTO Performance VALUES(6,1,10,2,0);		
 INSERT INTO Performance VALUES(8,1,15,3,3);		
-INSERT INTO Performance VALUES(2,1,8,2);		
+INSERT INTO Performance VALUES(2,1,8,1,2);		
 INSERT INTO Performance VALUES(1,1,0,0,0);		
 INSERT INTO Performance VALUES(4,1,23,8,4);		
 INSERT INTO Performance VALUES(11,1,11,20);		
