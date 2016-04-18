@@ -78,7 +78,7 @@ CREATE TABLE Coach
 --
     CONSTRAINT coachIC1 PRIMARY KEY(coachID),
     CONSTRAINT coachIC2 CHECK(wins >= 0),
-    CONSTRAINT coachIC3 CHECK(losses >= 0),
+    CONSTRAINT coachIC3 CHECK(losses >= 0)
 );
 --  -------------------------------------------------------
 CREATE TABLE Performance
