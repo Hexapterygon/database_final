@@ -44,7 +44,7 @@ CREATE TABLE Players
 --
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
         CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
-        CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
+        CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'So'))
 );
 --  -------------------------------------------------------
 CREATE TABLE Game
@@ -141,7 +141,7 @@ INSERT INTO Teams VALUES (2,'Syracuse','Otto the Orange');
 INSERT INTO Teams VALUES(3,'Oklahoma','Boomer and Sooner');
 INSERT INTO Teams VALUES(4,'UNC','Rameses');
 INSERT INTO Teams VALUES(5,'Kansas','Big Jay');
-INSERT INTO Teams VALUES(6,'Texas A&M','Reveille IX');
+INSERT INTO Teams VALUES(6,'Texas AM','Reveille IX');
 --2016 Season Data
 INSERT INTO History VALUES(1, 2016, 29, 5, 'South', 2);
 INSERT INTO History VALUES(2, 2016, 19, 13, 'Midwest', 10);
@@ -231,9 +231,9 @@ INSERT INTO Chamionships VALUES(4,1993);
 INSERT INTO Chamionships VALUES(4,1982);
 INSERT INTO Chamionships VALUES(4,1957);
 --Games
-INSERT INTO Game VALUES(1,'Final Four','2016-04-02',95,51,'Villanova'(1),'Oklahoma'(3),'Villanova'(1),2);
-INSERT INTO Game VALUES(2,'Final Four','2016-04-02',83,66,'UNC'(4),'Syracuse'(2),'UNC'(4),3);
-INSERT INTO Game VALUES(3,'Final Four', '2016-04-02',77,74,'Villanova'(1),'UNC'(4),'Villanova'(1),);
+INSERT INTO Game VALUES(1,'Final Four','2016-04-02',95,51,1,3,1,2);
+INSERT INTO Game VALUES(2,'Final Four','2016-04-02',83,66,4,2,4,3);
+INSERT INTO Game VALUES(3,'Final Four', '2016-04-02',77,74,1,4,1,);
 --Coaches
 INSERT INTO Coach VALUES(1,'Jay','Wright',441,237);
 INSERT INTO Coach VALUES(2,'Jim','Boeheim',988,346);
