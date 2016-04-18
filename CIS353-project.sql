@@ -86,13 +86,10 @@ CREATE TABLE Coach
     lastName    CHAR(15)     NOT NULL,
     wins        INTEGER      NOT NULL,
     losses      INTEGER      NOT NULL,
-    team        INTEGER      NOT NULL,
-    startYear   DECIMAL(4,0) NOT NULL,
 
     --needs integrity constraints yet
     CONSTRAINT coachIC1 CHECK(wins >= 0),
     CONSTRAINT coachIC2 CHECK(losses >= 0),
-    CONSTRAINT coachIC3 FOREIGN KEY (team) REFERENCES Teams(teamID)
 );
 --  -------------------------------------------------------
 CREATE TABLE Performance
@@ -113,17 +110,18 @@ CREATE TABLE Performance
     
 );
 ---------------------------------------------------------
-CREATE TABLE PreviouslyCoached
+CREATE TABLE Coaches
 
 (
 coachID       INTEGER,
 teamID        INTEGER,
-startYear     INTEGER,
+startYear     INTEGER    Not NULL,
 endYear       INTEGER,
 
-CONSTRAINT pcIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
-CONSTRAINT pcIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
-CONSTRAINT pcIC3 PRIMARY KEY (coachID, teamID)
+CONSTRAINT cIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
+CONSTRAINT cIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
+CONSTRAINT cIC3 PRIMARY KEY (coachID, teamID),
+CONSTRAINT cIC4 CHECK( startYear <= endYear)
 
 );
 -- 
@@ -135,7 +133,7 @@ SET FEEDBACK OFF
     See the Sailors database as an example.
 */
    
-
+ 
 --Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
 INSERT INTO Players (2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' ,1);
