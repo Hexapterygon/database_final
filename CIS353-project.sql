@@ -19,17 +19,15 @@ CREATE TABLE Teams
     teamID      INTEGER,
     name        CHAR(15)    NOT NULL,
     mascot      CHAR(15)    NOT NULL,
+    --
     CONSTRAINT teamIC1 PRIMARY KEY (teamID)
-    --CONSTRAINT teamIC3 UNIQUE (seed, region), 
-    --CONSTRAINT teamIC4 CHECK(seed >= 1 AND seed <= 16),
-    --CONSTRAINT teamIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East'))
 );
 -- ------------------------------------------------------
 CREATE TABLE Championships
 (
     teamID      INTEGER,
     yearWon     INTEGER,
-    
+    --
         CONSTRAINT champIC1 FORIEGN KEY (teamID) REFERENCES Teams(teamID) 
                         ON DELETE CASCADE,
         CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
@@ -44,13 +42,11 @@ CREATE TABLE Players
     height      INTEGER     NOT NULL,
     year        char(15)    NOT NULL,
     teamID      INTEGER,     --not sure on nullness
-
-    --needs integrity constraints yet
+--
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
         CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
                          ON DELETE CASCADE,
         CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'Sr'))
-        
 );
 --  -------------------------------------------------------
 CREATE TABLE Game
@@ -64,8 +60,7 @@ CREATE TABLE Game
     teamOne     INTEGER    NOT NULL,
     teamTwo     INTEGER    NOT NULL,
     nextGID     INTEGER,
-
-    --needs integrity constraints yet
+--
     CONSTRAINT gameIC1 PRIMARY KEY (gameID),
     CONSTRAINT gameIC2 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
     CONSTRAINT gameIC3 CHECK(winScore >=0 AND loseScore >= 0),
@@ -82,8 +77,7 @@ CREATE TABLE Coach
     lastName    CHAR(15)     NOT NULL,
     wins        INTEGER      NOT NULL,
     losses      INTEGER      NOT NULL,
-
-    --needs integrity constraints yet
+--
     CONSTRAINT coachIC1 PRIMARY KEY(coachID),
     CONSTRAINT coachIC2 CHECK(wins >= 0),
     CONSTRAINT coachIC3 CHECK(losses >= 0),
@@ -96,8 +90,7 @@ CREATE TABLE Performance
     points      INTEGER    NOT NULL,
     rebounds    INTEGER    NOT NULL,
     assists     INTEGER    NOT NULL,
-
-    --needs integrity constraints yet
+--
     CONSTRAINT perIC1 CHECK(points >= 0),
     CONSTRAINT perIC2 CHECK(rebounds >= 0),
     CONSTRAINT perIC3 CHECK(assists >= 0),
@@ -109,17 +102,15 @@ CREATE TABLE Performance
 ---------------------------------------------------------
 CREATE TABLE Coaches
 (
-
     coachID       INTEGER,
     teamID        INTEGER,
     startYear     INTEGER    Not NULL,
     endYear       INTEGER,
-
+--
     CONSTRAINT cIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
     CONSTRAINT cIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
     CONSTRAINT cIC3 PRIMARY KEY (coachID, teamID),
     CONSTRAINT cIC4 CHECK( startYear <= endYear)
-
 );
 -- ------------------------------------------------------
 CREATE TABLE History
@@ -130,7 +121,7 @@ CREATE TABLE History
     losses      INTEGER     NOT NULL,
     region      CHAR(15)    NOT NULL,
     seed        INTEGER     NOT NULL,
-    
+    --
     CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Team(teamID),
     CONSTRAINT hIC2 PRIMARY KEY(teamID, year),
     CONSTRAINT hIC3 CHECK (wins >= 0),
@@ -147,8 +138,6 @@ SET FEEDBACK OFF
     your queries can be verified by hand. 
     See the Sailors database as an example.
 */
-   
- 
 --Villanova Players
 INSERT INTO Players (1,0 ,'Henry' ,'Lowe' ,71 ,'Sr' ,1);
 INSERT INTO Players (2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' ,1);
@@ -218,7 +207,6 @@ INSERT INTO Players (62,34,'Toby','Egbuna',76,'Sr',4);
 INSERT INTO Players (63,42,'Joel','James',83,'Sr',4);
 INSERT INTO Players (64,43,'Spenser','Dalton',75,'Sr',4);
 INSERT INTO Players (65,44,'Justin','Jackson',80,'So',4);
-
 --Teams
 INSERT INTO Teams (1,'Villanova','Will D. Cat', 2016);
 INSERT INTO Teams (2,'Syracuse','Otto the Orange', 2016);
@@ -226,20 +214,16 @@ INSERT INTO Teams (3,'Oklahoma','Boomer and Sooner', 2016);
 INSERT INTO Teams (4,'UNC','Rameses', 2016);
 INSERT INTO Teams (5,'Kansas','Big Jay', 2016);
 INSERT INTO Teams (6,'Texas A&M','Reveille IX', 2016);
-
 --2016 Season Data
 INSERT INTO History(1, 2016, 29, 5, 'South', 2);
 INSERT INTO History(2, 2016, 19, 13, 'Midwest', 10);
 INSERT INTO History(3, 2016, 25, 7, 'West', 2);
 INSERT INTO History(4, 2016, 28, 5, 'East', 2);
-
 --2015 Season Data
 INSERT INTO History(1, 2015, 33, 3, 'East', 1);
 INSERT INTO History(5, 2015, 27, 9, 'Midwest', 2);
 INSERT INTO History(3, 2015, 24, 11, 'West', 10);
 INSERT INTO History(4, 2015, 26, 12, 'East', 4);
-
-
 --Championships
 INSERT INTO Chamionships(1,2016);
 INSERT INTO Chamionships(1,1985);
@@ -258,14 +242,13 @@ INSERT INTO Coach (1,'Jay','Wright',441,237);
 INSERT INTO Coach (2,'Jim','Boeheim',988,346);
 INSERT INTO Coach (3,'Roy','Williams',783,209);
 INSERT INTO Coach (4,'Lon','Kruger',590,361);
-
+--When and Where coaches coached
 INSERT INTO Coaches(1,1,2001, );
 INSERT INTO Coaches(2,2,1976, );
 INSERT INTO Coaches(3,4,2003, );
 INSERT INTO Coaches(4,3,2011, );
 INSERT INTO Coaches(3,5,1988,2004); 
 INSERT INTO Coaches(4,6,1982,1986); 
-
 -- Performances for Villanova in game 1
 INSERT INTO Performance(10,1,10,6,3);		
 INSERT INTO Performance(3,1,18,8,1);		
@@ -293,8 +276,8 @@ INSERT INTO Performance(46,1,4,1,0);
 INSERT INTO Performance(33,1,0,0,0);		
 INSERT INTO Performance(39,1,0,0,0);	
 INSERT INTO Performance(40,1,9,7,2);		
-
-
+--
+--
 SET FEEDBACK ON 
 COMMIT 
 -- 
@@ -303,25 +286,25 @@ COMMIT
 */
 SELECT * 
 FROM Coach;
-
+--
 SELECT * 
 FROM Players;
-
+--
 SELECT * 
 FROM Teams;
-
+--
 SELECT * 
 FROM Performance;
-
+--
 SELECT * 
 FROM Game;
-
+--
 SELECT *
 FROM Coaches;
-
+--
 SELECT *
 FROM History;
-
+--
 ------------------------------------------------------
 /*
 < The SQL queries>. Include the following for each query: 
