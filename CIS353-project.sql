@@ -394,6 +394,15 @@ FROM History;
 --WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
  --     AND T.teamID = 1;
 -------------------------------------------------------
+--Query 4: Aggregate query with GROUP BY, HAVING, and ORDER BY
+--Query finds the average points, rebounds, and assists for players with more than 15 points per
+--and orders them by player ID.
+SELECT PlayerID, AVG(Points), AVG(Rebounds), AVG(Assists)
+FROM PERFORMANCE
+GROUP BY PlayerID
+HAVING AVG(Points) >= 15
+ORDER BY PlayerID;
+-------------------------------------------------------
 /*
 < The insert/delete/update statements  to test the enforcement of ICs> 
 Include the following items for every IC that you test
