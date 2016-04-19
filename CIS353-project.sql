@@ -91,8 +91,11 @@ CREATE TABLE Coach
     wins        INTEGER      NOT NULL,
     losses      INTEGER      NOT NULL,
 --
+    -- Every coach is identified by an ID number
     CONSTRAINT coachIC1 PRIMARY KEY(coachID),
+    -- Every coach must have no wins or some positive number of wins
     CONSTRAINT coachIC2 CHECK(wins >= 0),
+    -- Every coach must have no losses or some positive number of losses
     CONSTRAINT coachIC3 CHECK(losses >= 0)
 );
 --  -------------------------------------------------------
@@ -125,9 +128,13 @@ CREATE TABLE Coaches
     startYear     INTEGER    Not NULL,
     endYear       INTEGER,
 --
+    -- Every person who coaches is defined by a coach ID
     CONSTRAINT cIC1 FOREIGN KEY (coachID) REFERENCES Coach(coachID),
+    -- Every person who coaches is also defined by a team ID
     CONSTRAINT cIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID),
+    -- Every person who coaches is defined by both a coach ID and a team ID
     CONSTRAINT cIC3 PRIMARY KEY (coachID, teamID),
+    -- Every coach must have started coaching sometime in the past
     CONSTRAINT cIC4 CHECK( startYear <= endYear)
 );
 -- ------------------------------------------------------
@@ -140,12 +147,19 @@ CREATE TABLE History
     region      CHAR(15)    NOT NULL,
     seed        INTEGER     NOT NULL,
     --
+    -- Every team's past/current seasons are identified by a team ID
     CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Teams(teamID),
+    -- Every history is defined by a team and the year of a particular season
     CONSTRAINT hIC2 PRIMARY KEY(teamID, year),
+    -- Every team's past/current season must have no wins or some positive number of wins
     CONSTRAINT hIC3 CHECK (wins >= 0),
+    -- Every team's past/current season must have no losses or some positive number of losses 
     CONSTRAINT hIC4 CHECK (losses >= 0),
+    -- Every team in the NCAA tournament must have played in one of these four regions
     CONSTRAINT hIC5 CHECK (region IN ('West', 'South', 'Midwest', 'East')),
+    -- Every team's seed is unique to the region that they play in
     CONSTRAINT hIC6 UNIQUE (seed, region),
+    -- Every seed number is limited by the number of teams that play in a region
     CONSTRAINT hIC7 CHECK(seed >= 1 AND seed <= 16)
 );
 -- ------------------------------------------------------
