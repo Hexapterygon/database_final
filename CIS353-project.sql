@@ -45,7 +45,7 @@ CREATE TABLE Players
     lastName    char(15)    NOT NULL,
     height      INTEGER     NOT NULL,
     year        char(15)    NOT NULL,
-    teamID      INTEGER,     --not sure on nullness
+    teamID      INTEGER     NOT NULL,
 --
         --Each row is a player defined by a unique playerID
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
@@ -431,6 +431,14 @@ Include the following items for every IC that you test
     -A comment line stating: Testing: < IC name> 
     -A SQL INSERT, DELETE, or UPDATE that will test the IC.
 */
+--testing perIC6, adding a duplicate key 
+INSERT INTO Performance VALUES(3,3,14,0,2);
+--testing playerIC2, adding a player with a non-existant team
+INSERT INTO Players VALUES(99,0,'test','player',73,'Jr',9);
+--testing gameIC2, game with invalid region
+INSERT INTO Game VALUES(4,'North','02-Apr-2016',95,51,1,3,1,NULL);
+--testing cIC4, coach with start year after end year
+INSERT INTO Coaches VALUES(9,6,1987,1986); 
     COMMIT 
 -- 
 SPOOL OFF
