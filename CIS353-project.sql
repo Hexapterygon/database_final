@@ -388,11 +388,15 @@ FROM History;
 2.A comment line stating the query in English. 
 3.The SQL code for the query. 
 */
--- I think this might be a four relation join. It's definitely three.
---SELECT P.firstName, P.lastName, R.points
---FROM P.Players, T.Teams, G.Game, R.Performance
---WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
- --     AND T.teamID = 1;
+--Query 1: Join invloving four tables
+--Query finds the first and last name and points of players for all performances of
+--players from team 1 from game 1
+SELECT P.firstName, P.lastName, R.points
+FROM Players P, Teams T, Game G, Performance R
+WHERE P.teamID = T.teamID AND 
+      P.playerID = R.playerID AND 
+      R.gameID = G.gameID AND
+      T.teamID = 1 AND G.gameID = 1;
 -------------------------------------------------------
 --Query 3: Intersect Query
 --Query finds Freshman players that had high performances (more than 15 points in a performance)
@@ -429,4 +433,4 @@ Include the following items for every IC that you test
 */
     COMMIT 
 -- 
-SPOOL OF
+SPOOL OFF
