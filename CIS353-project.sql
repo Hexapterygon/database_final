@@ -10,18 +10,18 @@ CIS 353
     <Nicholas Spruit>
     <Edward Johnson>
 */ 
-
+--
 /*
 < The SQL/DDL code that creates your schema > 
 In the DDL, every IC must have a unique name; e.g. IC5, IC10, IC15, etc. 
 */
-
+--
 CREATE TABLE Teams
 (
     teamID      INTEGER,
     name        CHAR(15)    NOT NULL,
     mascot      CHAR(40)    NOT NULL,
-    --
+--
     --Team ID is unique for each team
     CONSTRAINT teamIC1 PRIMARY KEY (teamID)
 );
@@ -30,8 +30,8 @@ CREATE TABLE Championships
 (
     teamID      INTEGER,
     yearWon     INTEGER,
-    --
-    --teamID corresponds to team ID in teams table
+--
+        --teamID corresponds to team ID in teams table
         CONSTRAINT champIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
         --each row corresponds to a team and a year that team won the championship
         CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
@@ -47,7 +47,7 @@ CREATE TABLE Players
     year        char(15)    NOT NULL,
     teamID      INTEGER,     --not sure on nullness
 --
-         --Each row is a player defined by a unique playerID
+        --Each row is a player defined by a unique playerID
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
         --Player's team is taken from teams table,
         CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
@@ -67,7 +67,7 @@ CREATE TABLE Game
     teamTwo     INTEGER    NOT NULL,
     nextGID     INTEGER,
 --
---each game has a unqiue gameID
+    --each game has a unqiue gameID
     CONSTRAINT gameIC1 PRIMARY KEY (gameID),
     --each game takes place in one of these regions
     CONSTRAINT gameIC2 CHECK (region IN('South', 'West', 'Midwest', 'East','Final Four')),
@@ -107,7 +107,7 @@ CREATE TABLE Performance
     rebounds    INTEGER    NOT NULL,
     assists     INTEGER    NOT NULL,
 --
---points can't be negative
+    --points can't be negative
     CONSTRAINT perIC1 CHECK(points >= 0),
     --rebounds can't be negative
     CONSTRAINT perIC2 CHECK(rebounds >= 0),
@@ -146,7 +146,7 @@ CREATE TABLE History
     losses      INTEGER     NOT NULL,
     region      CHAR(15)    NOT NULL,
     seed        INTEGER     NOT NULL,
-    --
+--
     -- Every team's past/current seasons are identified by a team ID
     CONSTRAINT hIC1 FOREIGN KEY(teamID) REFERENCES Teams(teamID),
     -- Every history is defined by a team and the year of a particular season
