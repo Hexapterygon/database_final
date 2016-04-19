@@ -394,14 +394,25 @@ FROM History;
 --WHERE P.teamID = T.teamID AND P.playerID = R.playerID AND R.gameID = G.gameID
  --     AND T.teamID = 1;
 -------------------------------------------------------
+--Query 3: Intersect Query
+--Query finds Freshman players that had high performances (more than 15 points in a performance)
+SELECT pl.playerID, pl.firstName, pl.lastName
+FROM Players pl
+WHERE year = 'Fr'
+INTERSECT
+SELECT pl.playerID, pl.firstName, pl.lastName
+FROM Players pl, Performance pe
+WHERE pl.playerID = pe.PlayerID AND
+      pe.points >= 15;
+------------------------------------------------------
 --Query 4: Aggregate query with GROUP BY, HAVING, and ORDER BY
 --Query finds the average points, rebounds, and assists for players with more than 15 points per
 --and orders them by player ID.
-SELECT PlayerID, AVG(Points), AVG(Rebounds), AVG(Assists)
+SELECT PlayerID, AVG(points), AVG(rebounds), AVG(assists)
 FROM PERFORMANCE
-GROUP BY PlayerID
-HAVING AVG(Points) >= 15
-ORDER BY PlayerID;
+GROUP BY playerID
+HAVING AVG(points) >= 15
+ORDER BY playerID;
 -------------------------------------------------------
 /*
 < The insert/delete/update statements  to test the enforcement of ICs> 
