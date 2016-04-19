@@ -417,6 +417,14 @@ FROM PERFORMANCE
 GROUP BY playerID
 HAVING AVG(points) >= 15
 ORDER BY playerID;
+------------------------------------------------------
+--Query 6: Correlated subquery
+--Query finds all the teams that have no history records in the tournament
+SELECT t.teamID, t.name
+FROM Teams t
+WHERE NOT EXISTS (SELECT h.teamID
+                  FROM History h
+                  WHERE h.teamID = t.teamID);
 -------------------------------------------------------
 --Query 7: Non-correlated subquery
 --Query finds all the team IDs and names that do not have any championships
