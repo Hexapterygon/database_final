@@ -31,10 +31,9 @@ CREATE TABLE Championships
     teamID      INTEGER,
     yearWon     INTEGER,
     --
-    --teamID corrosponds to team ID in teams table, on delete cascade is redundant here,
-    --suggest removing
+    --teamID corresponds to team ID in teams table
         CONSTRAINT champIC1 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
-        --each row corrosponds to a year and team, where that team won the championship
+        --each row corresponds to a team and a year that team won the championship
         CONSTRAINT champIC2 PRIMARY KEY(teamID, yearWon)
 );
 -- -------------------------------------------------------
@@ -48,10 +47,9 @@ CREATE TABLE Players
     year        char(15)    NOT NULL,
     teamID      INTEGER,     --not sure on nullness
 --
---Each row is a player defined by a unique playerID
+         --Each row is a player defined by a unique playerID
         CONSTRAINT playerIC1 PRIMARY KEY (playerID),
-        --Player's team is taken from teans table, on delete cascade may be redunant here
-        --should be in teams, the parent table
+        --Player's team is taken from teams table,
         CONSTRAINT playerIC2 FOREIGN KEY (teamID) REFERENCES Teams(teamID) ON DELETE CASCADE,
         --Checks to make sure player grade is freshnan, sophomore, junior, or senior
         CONSTRAINT playerIC3 CHECK (year IN ('Fr', 'Sr', 'Jr', 'So'))
