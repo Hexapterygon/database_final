@@ -266,9 +266,9 @@ INSERT INTO Championships VALUES(4,1993);
 INSERT INTO Championships VALUES(4,1982);
 INSERT INTO Championships VALUES(4,1957);
 --Games
-INSERT INTO Game VALUES(3,'Final Four', '02-Apr-2016',77,74,1,4,1,NULL);
-INSERT INTO Game VALUES(2,'Final Four','02-Apr-2016',83,66,4,2,4,3);
-INSERT INTO Game VALUES(1,'Final Four','02-Apr-2016',95,51,1,3,1,2);
+INSERT INTO Game VALUES(3,'Final Four', '02-04-2016',77,74,1,4,1,NULL);
+INSERT INTO Game VALUES(2,'Final Four','02-04-2016',83,66,4,2,4,3);
+INSERT INTO Game VALUES(1,'Final Four','02-04-2016',95,51,1,3,1,2);
 --Coaches
 INSERT INTO Coach VALUES(1,'Jay','Wright',441,237);
 INSERT INTO Coach VALUES(2,'Jim','Boeheim',988,346);
@@ -444,7 +444,7 @@ INSERT INTO Performance VALUES(3,3,14,0,2);
 --testing playerIC2, adding a player with a non-existant team
 INSERT INTO Players VALUES(99,0,'test','player',73,'Jr',9);
 --testing gameIC2, game with invalid region
-INSERT INTO Game VALUES(4,'North','02-Apr-2016',95,51,1,3,1,NULL);
+INSERT INTO Game VALUES(4,'North','02-04-2016',95,51,1,3,1,NULL);
 --testing cIC4, coach with start year after end year
 INSERT INTO Coaches VALUES(9,6,1987,1986); 
     COMMIT 
