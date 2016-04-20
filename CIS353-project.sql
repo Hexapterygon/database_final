@@ -448,5 +448,5 @@ INSERT INTO Game VALUES(4,'North','02-04-2016',95,51,1,3,1,NULL);
 --testing cIC4, coach with start year after end year
 INSERT INTO Coaches VALUES(9,6,1987,1986); 
     COMMIT 
--- 
+
 SPOOL OFF
