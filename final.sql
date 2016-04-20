@@ -197,7 +197,7 @@ INSERT INTO Season VALUES(1, 2015, 33, 3, 'East', 1);
 INSERT INTO Season VALUES(5, 2015, 27, 9, 'Midwest', 2);
 INSERT INTO Season VALUES(3, 2015, 24, 11, 'West', 10);
 INSERT INTO Season VALUES(4, 2015, 26, 12, 'East', 4);
-INSERT INTO Season VALUES(6, 2015, 21, 12, , );
+INSERT INTO Season VALUES(6, 2015, 21, 12,NULL, NULL);
 --Villanova Players
 INSERT INTO Player VALUES (1,0,'Henry','Lowe',71,'Sr',1);
 INSERT INTO Player VALUES(2,1 ,'Jalen' ,'Brunson' ,75 ,'Fr' ,1);
